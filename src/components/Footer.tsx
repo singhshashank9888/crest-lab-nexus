@@ -1,22 +1,20 @@
 import { FlaskConical, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { services } from "@/lib/services-data";
 
 const Footer = () => {
-  const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
       <div className="container mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-heading font-bold text-lg">C</span>
               </div>
               <span className="font-heading font-bold text-lg">Crest Research</span>
-            </div>
+            </Link>
             <p className="text-secondary-foreground/60 text-sm leading-relaxed">
               Advancing Quality. Ensuring Safety. Empowering Research.
             </p>
@@ -30,28 +28,33 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["#home:Home", "#about:About", "#services:Services", "#accreditation:Accreditation", "#contact:Contact"].map((l) => {
-                const [href, label] = l.split(":");
-                return (
-                  <li key={href}>
-                    <button onClick={() => scrollTo(href)} className="text-secondary-foreground/60 hover:text-primary text-sm transition-colors">
-                      {label}
-                    </button>
-                  </li>
-                );
-              })}
+              {[
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About" },
+                { to: "/services", label: "Services" },
+                { to: "/accreditation", label: "Accreditation" },
+                { to: "/contact", label: "Contact" },
+              ].map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-secondary-foreground/60 hover:text-primary text-sm transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="font-heading font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-secondary-foreground/60">
-              <li>Pharmaceutical Testing</li>
-              <li>Method Validation</li>
-              <li>R&D Consultation</li>
-              <li>Food Testing</li>
-              <li>Veterinary Testing</li>
+            <ul className="space-y-2 text-sm">
+              {services.slice(0, 5).map((s) => (
+                <li key={s.slug}>
+                  <Link to={`/services/${s.slug}`} className="text-secondary-foreground/60 hover:text-primary transition-colors">
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
