@@ -1,12 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, FlaskConical } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImg from "@/assets/hero-lab.jpg";
 
 const HeroSection = () => {
-  const scrollToContact = () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -22,64 +19,41 @@ const HeroSection = () => {
 
       <div className="container mx-auto relative z-10 pt-24 pb-16">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 mb-6"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex items-center gap-2 mb-6">
             <div className="flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5">
               <FlaskConical size={16} className="text-primary" />
               <span className="text-primary text-sm font-medium">DDA Approved Laboratory</span>
             </div>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground leading-tight mb-6"
           >
-            Crest Research{" "}
-            <span className="gradient-text">Laboratories</span>{" "}
-            Pvt. Ltd.
+            Crest Research{" "}<span className="gradient-text">Laboratories</span>{" "}Pvt. Ltd.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }}
             className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mb-8 leading-relaxed"
           >
             Advancing Quality. Ensuring Safety. Empowering Research.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <button
-              onClick={scrollToContact}
+            <Link to="/contact"
               className="bg-primary hover:bg-emerald-glow text-primary-foreground px-8 py-3.5 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_30px_hsl(160_84%_39%/0.4)]"
             >
-              Request a Consultation
-              <ArrowRight size={20} />
-            </button>
-            <button
-              onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
-              className="border border-primary-foreground/20 text-primary-foreground/80 hover:border-primary hover:text-primary px-8 py-3.5 rounded-lg font-semibold text-lg transition-all duration-300"
+              Request a Consultation <ArrowRight size={20} />
+            </Link>
+            <Link to="/services"
+              className="border border-primary-foreground/20 text-primary-foreground/80 hover:border-primary hover:text-primary px-8 py-3.5 rounded-lg font-semibold text-lg transition-all duration-300 text-center"
             >
               Explore Services
-            </button>
+            </Link>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
             className="grid grid-cols-3 gap-6 mt-16 max-w-lg"
           >
             {[

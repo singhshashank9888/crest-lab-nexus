@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 220 60% 8%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -18,8 +18,8 @@
     --primary: 160 84% 39%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 47% 11%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 60% 8%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
@@ -36,8 +36,8 @@
 
     --radius: 0.75rem;
 
-    --navy: 222 47% 11%;
-    --navy-light: 222 30% 20%;
+    --navy: 220 60% 8%;
+    --navy-light: 220 45% 15%;
     --emerald: 160 84% 39%;
     --emerald-light: 160 84% 95%;
     --emerald-glow: 160 72% 50%;
