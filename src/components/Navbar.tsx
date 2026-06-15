@@ -44,12 +44,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-bold text-lg">C</span>
-          </div>
-          <span className="font-heading font-bold text-lg text-primary-foreground hidden sm:inline">
-            Crest Research
-          </span>
+          <img src="/logo.svg" alt="img" className="w-[150px]"/>
+         
         </Link>
 
         {/* Desktop */}
